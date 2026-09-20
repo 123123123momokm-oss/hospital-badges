@@ -28,7 +28,6 @@ input,select,textarea{font-family:inherit}
 .ltr{direction:ltr;text-align:left}
 .hidden{display:none !important}
 
-/* Buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:14px;font-size:14.5px;font-weight:700;border:2px solid transparent;transition:all .22s cubic-bezier(.4,0,.2,1);white-space:nowrap;user-select:none;position:relative;overflow:hidden;min-height:48px}
 .btn:active{transform:translateY(1px)}
 .btn svg{flex-shrink:0}
@@ -40,14 +39,12 @@ input,select,textarea{font-family:inherit}
 .btn-ghost:hover{background:#fff;border-color:var(--red);color:var(--red-dark)}
 .btn-danger{background:var(--danger);color:#fff}
 .btn-warn{background:var(--warning);color:#fff}
-.btn-info{background:linear-gradient(135deg,#0288D1,#01579B);color:#fff}
 .btn-lg{padding:16px 32px;font-size:16.5px;border-radius:16px;min-height:56px}
 .btn-sm{padding:8px 14px;font-size:12.5px;border-radius:10px;min-height:36px}
 .btn-block{width:100%}
 
 .screen{position:fixed;inset:0;overflow-y:auto;display:flex;flex-direction:column;z-index:10}
 
-/* Welcome */
 #welcomeScreen{background:radial-gradient(circle at 20% 0%,rgba(198,40,40,.12) 0%,transparent 45%),radial-gradient(circle at 80% 100%,rgba(46,125,50,.15) 0%,transparent 45%),linear-gradient(160deg,#FAFAFA 0%,#F5F5F5 50%,#EFEFEF 100%)}
 .welcome-container{max-width:540px;margin:0 auto;width:100%;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px 24px;text-align:center;position:relative}
 .welcome-logo-wrap{width:200px;height:200px;margin-bottom:28px;position:relative;cursor:pointer;transition:transform .3s}
@@ -135,56 +132,12 @@ textarea.input{min-height:80px;resize:vertical;line-height:1.6}
 .status-info-row .si-label{color:var(--gray-600);font-weight:600}
 .status-info-row .si-value{color:var(--gray-900);font-weight:800}
 
-/* Reference Box */
-.reference-box{
-  background:linear-gradient(135deg,var(--green-light) 0%,#fff 100%);
-  border:2px solid var(--green);
-  border-radius:18px;
-  padding:20px;
-  margin:20px 0;
-  text-align:center;
-}
-.reference-box .ref-label{
-  font-size:12px;
-  color:var(--gray-600);
-  font-weight:700;
-  margin-bottom:8px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:6px;
-}
+.reference-box{background:linear-gradient(135deg,var(--green-light) 0%,#fff 100%);border:2px solid var(--green);border-radius:18px;padding:20px;margin:20px 0;text-align:center}
+.reference-box .ref-label{font-size:12px;color:var(--gray-600);font-weight:700;margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:6px}
 .reference-box .ref-label::before{content:'🎫';font-size:16px}
-.reference-box .ref-number{
-  font-family:'Tajawal','Cairo',monospace;
-  font-size:32px;
-  font-weight:900;
-  color:var(--green-dark);
-  letter-spacing:2px;
-  line-height:1.2;
-  margin-bottom:10px;
-  user-select:all;
-  cursor:pointer;
-  direction:ltr;
-}
-.reference-box .ref-hint{
-  font-size:11.5px;
-  color:var(--gray-600);
-  line-height:1.6;
-  font-weight:500;
-}
-.reference-box .ref-copy{
-  margin-top:12px;
-  padding:8px 16px;
-  background:var(--green);
-  color:#fff;
-  border-radius:10px;
-  font-size:12.5px;
-  font-weight:700;
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-}
+.reference-box .ref-number{font-family:'Tajawal','Cairo',monospace;font-size:32px;font-weight:900;color:var(--green-dark);letter-spacing:2px;line-height:1.2;margin-bottom:10px;user-select:all;cursor:pointer;direction:ltr}
+.reference-box .ref-hint{font-size:11.5px;color:var(--gray-600);line-height:1.6;font-weight:500}
+.reference-box .ref-copy{margin-top:12px;padding:8px 16px;background:var(--green);color:#fff;border-radius:10px;font-size:12.5px;font-weight:700;display:inline-flex;align-items:center;gap:6px}
 
 .success-screen{padding:40px 24px 100px;text-align:center;max-width:540px;margin:0 auto;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh}
 .success-check{width:110px;height:110px;border-radius:50%;background:linear-gradient(135deg,var(--green-light) 0%,var(--green-soft) 100%);display:flex;align-items:center;justify-content:center;font-size:58px;color:var(--green-dark);margin-bottom:22px;box-shadow:0 20px 50px rgba(46,125,50,.25);animation:successBounce .6s}
@@ -370,6 +323,11 @@ textarea.input{min-height:80px;resize:vertical;line-height:1.6}
 .font-option[data-font="Reem Kufi"] .font-preview{font-family:'Reem Kufi',sans-serif}
 .font-option[data-font="Noto Naskh Arabic"] .font-preview{font-family:'Noto Naskh Arabic',serif}
 
+#loadingOverlay{position:fixed;inset:0;background:linear-gradient(135deg,var(--red-dark),var(--green-dark));z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;color:#fff}
+#loadingOverlay .spinner{width:60px;height:60px;border:5px solid rgba(255,255,255,.2);border-top-color:#fff;border-radius:50%;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+#loadingOverlay .load-text{font-size:16px;font-weight:700;opacity:.9}
+
 #printArea,#captureArea{position:fixed;left:-10000px;top:0;pointer-events:none;opacity:0}
 #printArea.active,#captureArea.active{opacity:1}
 #printArea.bulk-mode{display:block !important}
@@ -404,6 +362,11 @@ textarea.input{min-height:80px;resize:vertical;line-height:1.6}
 </style>
 </head>
 <body>
+
+<div id="loadingOverlay">
+  <div class="spinner"></div>
+  <div class="load-text">⏳ جاري تحميل البيانات من السيرفر...</div>
+</div>
 
 <!-- ========== WELCOME ========== -->
 <div class="screen" id="welcomeScreen">
@@ -517,19 +480,16 @@ textarea.input{min-height:80px;resize:vertical;line-height:1.6}
     <div class="success-check">✓</div>
     <h2 class="success-title">تم إرسال طلبك بنجاح!</h2>
     <p class="success-desc">احتفظ بالرقم المرجعي التالي لمتابعة حالة طلبك لاحقاً</p>
-
     <div class="reference-box">
       <div class="ref-label">الرقم المرجعي</div>
       <div class="ref-number" id="refNumberDisplay">—</div>
       <div class="ref-hint">📋 يمكنك النقر على الرقم لنسخه</div>
       <button class="ref-copy" onclick="copyReference()">📄 نسخ الرقم المرجعي</button>
     </div>
-
     <div class="info-box" style="width:100%;max-width:400px;margin-bottom:20px;text-align:right">
       <strong>⚠️ احتفظ بهذا الرقم!</strong><br>
       ستحتاجه لمتابعة حالة طلبك. لن تستطيع متابعته بدون هذا الرقم.
     </div>
-
     <div style="width:100%;max-width:360px;display:flex;flex-direction:column;gap:12px">
       <button class="btn btn-primary btn-block" id="goToTrackBtn">👁 متابعة حالة طلبي</button>
       <button class="btn btn-ghost btn-block" id="backHomeBtn">🏠 العودة للرئيسية</button>
@@ -574,7 +534,10 @@ textarea.input{min-height:80px;resize:vertical;line-height:1.6}
             <p>مستشفى الإمام الحسن المجتبى (ع) · <span id="adminRoleLabel">—</span></p>
           </div>
         </div>
-        <div class="admin-header-actions"><button class="btn-header" id="adminLogoutBtn">🚪 خروج</button></div>
+        <div class="admin-header-actions">
+          <span id="liveIndicator" style="display:none;color:#fff;font-size:12px;padding:8px 14px;background:rgba(255,255,255,.15);border-radius:10px">🟢 مباشر</span>
+          <button class="btn-header" id="adminLogoutBtn">🚪 خروج</button>
+        </div>
       </div>
       <nav class="admin-nav">
         <button class="admin-nav-btn active" data-panel="dashboard">🏠 الرئيسية</button>
@@ -656,7 +619,7 @@ textarea.input{min-height:80px;resize:vertical;line-height:1.6}
               <button class="zoom-btn" onclick="zoomTemplate(-0.1)">−</button>
               <span class="zoom-level" id="zoomLevel">100%</span>
               <button class="zoom-btn" onclick="zoomTemplate(0.1)">+</button>
-              <button class="zoom-btn" onclick="resetZoom()" title="إعادة الحجم">⟲</button>
+              <button class="zoom-btn" onclick="resetZoom()">⟲</button>
             </div>
           </div>
           <div class="template-controls-panel">
@@ -717,7 +680,7 @@ textarea.input{min-height:80px;resize:vertical;line-height:1.6}
               </div>
               <p style="font-size:12px;color:var(--gray-500);text-align:center;line-height:1.6;max-width:280px">PNG بخلفية شفافة أو مربعة، أقل من 500KB</p>
             </div>
-            <div class="info-box">💡 الشعار يظهر في: صفحة الترحيب، لوحة الإدارة، وباقي الصفحات</div>
+            <div class="info-box">💡 الشعار يظهر للجميع على كل الأجهزة</div>
           </div>
         </div>
 
@@ -730,7 +693,6 @@ textarea.input{min-height:80px;resize:vertical;line-height:1.6}
             <div class="font-option" data-font="Reem Kufi"><div class="font-name">Reem Kufi</div><div class="font-preview">مستشفى الإمام</div></div>
             <div class="font-option" data-font="Noto Naskh Arabic"><div class="font-name">Noto Naskh</div><div class="font-preview">مستشفى الإمام</div></div>
           </div>
-          <div class="info-box" style="margin-top:14px">💡 اختر الخط المناسب لاسم المستشفى في صفحة الترحيب</div>
         </div>
 
         <div class="settings-section">
@@ -740,6 +702,7 @@ textarea.input{min-height:80px;resize:vertical;line-height:1.6}
             <div class="field"><label>السطر الثانوي</label><input type="text" id="setWelcomeSubtitle" class="input ltr"></div>
             <div class="field"><label>الشعار النصي</label><input type="text" id="setWelcomeTagline" class="input"></div>
             <div class="field"><label>نص زر الحصول على الباج</label><input type="text" id="setWelcomeButton" class="input"></div>
+            <div class="field"><label>نص زر متابعة الطلب</label><input type="text" id="setTrackButton" class="input"></div>
           </div>
           <div style="margin-top:14px">
             <label class="toggle-switch">
@@ -770,7 +733,7 @@ textarea.input{min-height:80px;resize:vertical;line-height:1.6}
         <div class="settings-section">
           <h3>💾 الحفظ</h3>
           <div style="display:flex;gap:10px;flex-wrap:wrap">
-            <button class="btn btn-success btn-lg" id="saveSiteSettingsBtn" style="flex:1;min-width:200px">💾 حفظ الإعدادات</button>
+            <button class="btn btn-success btn-lg" id="saveSiteSettingsBtn" style="flex:1;min-width:200px">💾 حفظ ونشر للجميع</button>
             <button class="btn btn-ghost btn-lg" id="resetSiteSettingsBtn" style="flex:1;min-width:180px">↺ استعادة</button>
             <button class="btn btn-ghost btn-lg" id="previewSiteBtn" style="flex:1;min-width:180px">👁 معاينة</button>
           </div>
@@ -806,15 +769,29 @@ textarea.input{min-height:80px;resize:vertical;line-height:1.6}
 <div id="printArea" aria-hidden="true"></div>
 <div id="captureArea" aria-hidden="true"></div>
 
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
 
 <script>
-/* ============ Constants ============ */
+/* ============================================================
+   Firebase Configuration
+============================================================ */
+const firebaseConfig = {
+  apiKey: "AIzaSyAdTULpyKroYVBtR8oqnUYtha3HTp9u40s",
+  authDomain: "hospital-badges-89f34.firebaseapp.com",
+  projectId: "hospital-badges-89f34",
+  storageBucket: "hospital-badges-89f34.firebasestorage.app",
+  messagingSenderId: "7156002237",
+  appId: "1:7156002237:web:3c90c744c52580777bb6d4"
+};
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+db.settings({ ignoreUndefinedProperties: true });
+
 const RECEIVER_EMAIL = "123123123momokm@gmail.com";
 const FORMSUBMIT_URL = "https://formsubmit.co/ajax/" + RECEIVER_EMAIL;
-
-const KEYS = { USERS:'hhm_users_v5', REQUESTS:'hhm_requests_v5', BADGES:'hhm_badges_v5', TEMPLATE:'hhm_template_v5', LISTS:'hhm_lists_v5', SESSION:'hhm_session_v5', LOGS:'hhm_logs_v5', SITE:'hhm_site_v5', REF_COUNTER:'hhm_ref_counter_v5' };
 
 const DEFAULT_SITE_SETTINGS = {
   logo: null,
@@ -826,7 +803,7 @@ const DEFAULT_SITE_SETTINGS = {
   welcomeShowTrack: true,
   footerText: 'مستشفى الإمام الحسن المجتبى (عليه السلام)',
   footerTextEn: 'AL-HASSAN AL-MUJTABA HOSPITAL',
-  versionText: 'الإصدار 3.0',
+  versionText: 'الإصدار 4.0 — Firebase',
   primaryColor: '#C62828',
   secondaryColor: '#2E7D32',
   hospitalNameFont: 'Amiri'
@@ -867,10 +844,9 @@ const BADGE_FIELD_KEYS = ['photo', ...Object.keys(BADGE_FIELDS)];
 const DEFAULT_LOGO_SVG = `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="gRed" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C62828"/><stop offset="1" stop-color="#8E0000"/></linearGradient><linearGradient id="gGreen" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2E7D32"/><stop offset="1" stop-color="#1B5E20"/></linearGradient></defs><circle cx="100" cy="100" r="94" fill="none" stroke="url(#gRed)" stroke-width="5"/><circle cx="100" cy="100" r="82" fill="none" stroke="url(#gGreen)" stroke-width="3"/><path d="M60 60 L60 140 M60 100 L95 100" stroke="url(#gRed)" stroke-width="14" stroke-linecap="round" fill="none"/><path d="M105 60 Q130 60 130 80 Q130 100 105 100 Q130 100 130 120 Q130 140 105 140" stroke="url(#gGreen)" stroke-width="9" fill="none" stroke-linecap="round"/><path d="M105 60 L105 140" stroke="url(#gGreen)" stroke-width="4" fill="none"/><circle cx="100" cy="170" r="4" fill="#D4A028"/></svg>`;
 
 const state = {
-  users:[], requests:[], badges:[],
+  users:[], requests:[], badges:[], logs:[],
   template:{ bg:null, fields:{}, locked:false, lockedAt:null },
   lists: JSON.parse(JSON.stringify(DEFAULT_LISTS)),
-  logs:[],
   siteSettings: JSON.parse(JSON.stringify(DEFAULT_SITE_SETTINGS)),
   currentAdmin:null, currentRequestId:null, currentReference:null, requestType:null,
   basicName:'', basicJob:'', basicWorkplace:'',
@@ -878,28 +854,21 @@ const state = {
   selectedField:'photo', dragging:null, dragEl:null, dragOffset:{x:0,y:0},
   batchSelection:new Set(),
   logoClickCount:0, logoClickTimer:null,
-  templateZoom:1
+  templateZoom:1,
+  firebaseReady:false,
+  refCounter:0
 };
 
 const $ = id => document.getElementById(id);
 
-/* ============ Helpers ============ */
+/* Helpers */
 function todayISO(){const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;}
 function addOneYear(iso){if(!iso)return '';const[y,m,d]=iso.split('-').map(Number);const dt=new Date(y+1,m-1,d);return `${dt.getFullYear()}-${String(dt.getMonth()+1).padStart(2,'0')}-${String(dt.getDate()).padStart(2,'0')}`;}
 function fmtDate(iso){if(!iso)return '—';const[y,m,d]=iso.split('-');return `${y}/${m}/${d}`;}
-function fmtDT(ts){if(!ts)return '—';return new Date(ts).toLocaleString('ar-IQ');}
+function fmtDT(ts){if(!ts)return '—';try{return new Date(ts).toLocaleString('ar-IQ');}catch(_){return '—';}}
 function escapeHtml(s){if(s==null)return '';return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');}
 function uid(p){return (p||'') + Date.now().toString(36) + Math.random().toString(36).slice(2,6);}
-function generateNextBadgeNumber(){const nums=state.badges.map(b=>parseInt(b.badgeNumber,10)||0);const maxN=nums.length?Math.max(...nums):0;return String(maxN+1).padStart(4,'0');}
-
-/* ✅ توليد الرقم المرجعي */
-function generateReferenceNumber(){
-  let counter = parseInt(localStorage.getItem(KEYS.REF_COUNTER) || '0', 10);
-  counter++;
-  localStorage.setItem(KEYS.REF_COUNTER, String(counter));
-  const year = new Date().getFullYear();
-  return `HHM-${year}-${String(counter).padStart(4,'0')}`;
-}
+function generateNextBadgeNumber(){const nums=state.requests.filter(r=>r.badgeNumber).map(r=>parseInt(r.badgeNumber,10)||0);const maxN=nums.length?Math.max(...nums):0;return String(maxN+1).padStart(4,'0');}
 
 function toast(msg,type=''){
   const el=document.createElement('div');
@@ -912,7 +881,7 @@ function toast(msg,type=''){
 function openModal(id){const m=$(id);if(m)m.classList.remove('hidden');}
 function closeModal(id){const m=$(id);if(m)m.classList.add('hidden');}
 
-function compressImage(file,maxW=600,maxH=800,q=0.82){
+function compressImage(file,maxW=400,maxH=500,q=0.72){
   return new Promise((res,rej)=>{
     if(!file.type.startsWith('image/'))return rej(new Error('نوع غير مدعوم'));
     const r=new FileReader();
@@ -937,51 +906,181 @@ function compressImage(file,maxW=600,maxH=800,q=0.82){
   });
 }
 
-/* ============ Storage ============ */
-function loadStorage(){
-  try{const u=localStorage.getItem(KEYS.USERS);if(u)state.users=JSON.parse(u);}catch(_){}
-  try{const r=localStorage.getItem(KEYS.REQUESTS);if(r)state.requests=JSON.parse(r);}catch(_){}
-  try{const b=localStorage.getItem(KEYS.BADGES);if(b)state.badges=JSON.parse(b);}catch(_){}
-  try{const t=localStorage.getItem(KEYS.TEMPLATE);if(t)state.template=Object.assign({bg:null,fields:{},locked:false,lockedAt:null},JSON.parse(t));}catch(_){}
-  try{const l=localStorage.getItem(KEYS.LISTS);if(l)state.lists=Object.assign(JSON.parse(JSON.stringify(DEFAULT_LISTS)),JSON.parse(l));}catch(_){}
-  try{const lg=localStorage.getItem(KEYS.LOGS);if(lg)state.logs=JSON.parse(lg);}catch(_){}
-  try{const s=localStorage.getItem(KEYS.SITE);if(s)state.siteSettings=Object.assign(JSON.parse(JSON.stringify(DEFAULT_SITE_SETTINGS)),JSON.parse(s));}catch(_){}
-  if(!state.users.find(u=>u.username==='admin')){
-    state.users.push({id:'u_admin',username:'admin',password:'admin',name:'مدير النظام',role:'super_admin',fixed:true,createdAt:Date.now()});
-  }
-  if(!state.users.find(u=>u.username==='manager')){
-    state.users.push({id:'u_manager',username:'manager',password:'manager',name:'إداري',role:'admin',fixed:true,createdAt:Date.now()});
-  }
-  saveUsers();ensureFields();
-}
-function safeSet(key,value){
-  try{localStorage.setItem(key,value);return true;}
-  catch(e){
-    if(e.name==='QuotaExceededError'||String(e.message).toLowerCase().includes('quota'))toast('⚠️ مساحة التخزين ممتلئة','error');
-    else toast('فشل الحفظ: '+e.message,'error');
+/* ============================================================
+   Firebase Data Layer
+============================================================ */
+async function loadFromFirestore(){
+  try{
+    // site settings
+    const siteSnap = await db.collection('config').doc('site').get();
+    if(siteSnap.exists) state.siteSettings = Object.assign(JSON.parse(JSON.stringify(DEFAULT_SITE_SETTINGS)), siteSnap.data());
+    
+    // lists
+    const listsSnap = await db.collection('config').doc('lists').get();
+    if(listsSnap.exists) state.lists = Object.assign(JSON.parse(JSON.stringify(DEFAULT_LISTS)), listsSnap.data());
+    
+    // template
+    const tplSnap = await db.collection('config').doc('template').get();
+    if(tplSnap.exists) state.template = Object.assign({bg:null,fields:{},locked:false,lockedAt:null}, tplSnap.data());
+    
+    // users
+    const usersSnap = await db.collection('users').get();
+    state.users = usersSnap.docs.map(d=>({...d.data(), id:d.id}));
+    if(!state.users.find(u=>u.username==='admin')){
+      const adminDoc = { username:'admin', password:'admin', name:'مدير النظام', role:'super_admin', fixed:true, createdAt:Date.now() };
+      const ref = await db.collection('users').add(adminDoc);
+      state.users.push({...adminDoc, id:ref.id});
+    }
+    if(!state.users.find(u=>u.username==='manager')){
+      const mgrDoc = { username:'manager', password:'manager', name:'إداري', role:'admin', fixed:true, createdAt:Date.now() };
+      const ref = await db.collection('users').add(mgrDoc);
+      state.users.push({...mgrDoc, id:ref.id});
+    }
+    
+    // requests
+    const reqSnap = await db.collection('requests').get();
+    state.requests = reqSnap.docs.map(d=>({...d.data(), id:d.id}));
+    
+    // logs (آخر 100)
+    const logsSnap = await db.collection('logs').orderBy('timestamp','desc').limit(100).get();
+    state.logs = logsSnap.docs.map(d=>({...d.data(), id:d.id}));
+    
+    // ref counter
+    const refSnap = await db.collection('config').doc('refCounter').get();
+    if(refSnap.exists) state.refCounter = refSnap.data().value || 0;
+    
+    state.firebaseReady = true;
+    return true;
+  }catch(e){
+    console.error('Firebase load error:', e);
     return false;
   }
 }
-function saveUsers(){safeSet(KEYS.USERS,JSON.stringify(state.users));}
-function saveRequests(){return safeSet(KEYS.REQUESTS,JSON.stringify(state.requests));}
-function saveBadges(){return safeSet(KEYS.BADGES,JSON.stringify(state.badges));}
-function saveTemplate(){return safeSet(KEYS.TEMPLATE,JSON.stringify(state.template));}
-function saveLists(){safeSet(KEYS.LISTS,JSON.stringify(state.lists));}
-function saveLogs(){safeSet(KEYS.LOGS,JSON.stringify(state.logs.slice(0,200)));}
-function saveSiteSettings(){safeSet(KEYS.SITE,JSON.stringify(state.siteSettings));}
-function ensureFields(){
-  if(!state.template.fields)state.template.fields={};
-  for(const k of BADGE_FIELD_KEYS){
-    if(!state.template.fields[k]){
-      const def=BADGE_FIELDS[k]?BADGE_FIELDS[k].defaults:BADGE_BOX[k];
-      if(def)state.template.fields[k]=JSON.parse(JSON.stringify(def));
+
+/* Real-time listeners */
+function setupRealtimeListeners(){
+  // Requests realtime
+  db.collection('requests').onSnapshot(snap => {
+    snap.docChanges().forEach(change => {
+      if(change.type === 'added' || change.type === 'modified'){
+        const data = {...change.doc.data(), id: change.doc.id};
+        const idx = state.requests.findIndex(r=>r.id === change.doc.id);
+        if(idx >= 0) state.requests[idx] = data;
+        else state.requests.push(data);
+      } else if(change.type === 'removed'){
+        state.requests = state.requests.filter(r=>r.id !== change.doc.id);
+      }
+    });
+    // تحديث الواجهة إذا كنا في لوحة الإدارة
+    if(state.currentAdmin){
+      renderAdminAll();
     }
+  }, err=>console.warn('requests listener:', err));
+  
+  // Site settings realtime
+  db.collection('config').doc('site').onSnapshot(doc => {
+    if(doc.exists){
+      state.siteSettings = Object.assign(JSON.parse(JSON.stringify(DEFAULT_SITE_SETTINGS)), doc.data());
+      applySiteSettings();
+    }
+  }, err=>console.warn('site listener:', err));
+  
+  // Template realtime
+  db.collection('config').doc('template').onSnapshot(doc => {
+    if(doc.exists){
+      state.template = Object.assign({bg:null,fields:{},locked:false,lockedAt:null}, doc.data());
+      if(state.currentAdmin && document.querySelector('[data-panel="template"]').classList.contains('active')){
+        renderTemplateEditor();
+      }
+    }
+  }, err=>console.warn('template listener:', err));
+  
+  // Users realtime
+  db.collection('users').onSnapshot(snap => {
+    state.users = snap.docs.map(d=>({...d.data(), id:d.id}));
+    if(state.currentAdmin && document.querySelector('[data-panel="users"]').classList.contains('active')){
+      renderUsers();
+    }
+  }, err=>console.warn('users listener:', err));
+  
+  // Logs realtime
+  db.collection('logs').orderBy('timestamp','desc').limit(100).onSnapshot(snap => {
+    state.logs = snap.docs.map(d=>({...d.data(), id:d.id}));
+    if(state.currentAdmin && document.querySelector('[data-panel="dashboard"]').classList.contains('active')){
+      renderAdminDashboard();
+    }
+  }, err=>console.warn('logs listener:', err));
+}
+
+/* Firebase save functions */
+async function fsSaveSettings(){
+  try{
+    await db.collection('config').doc('site').set(state.siteSettings);
+    return true;
+  }catch(e){console.error('save settings:',e);toast('فشل الحفظ','error');return false;}
+}
+async function fsSaveLists(){
+  try{
+    await db.collection('config').doc('lists').set(state.lists);
+    return true;
+  }catch(e){console.error('save lists:',e);return false;}
+}
+async function fsSaveTemplate(){
+  try{
+    await db.collection('config').doc('template').set(state.template);
+    return true;
+  }catch(e){console.error('save template:',e);toast('فشل حفظ القالب','error');return false;}
+}
+async function fsSaveRequest(req){
+  try{
+    await db.collection('requests').doc(req.id).set(req);
+    return true;
+  }catch(e){console.error('save request:',e);toast('فشل حفظ الطلب','error');return false;}
+}
+async function fsDeleteRequest(id){
+  try{await db.collection('requests').doc(id).delete();return true;}
+  catch(e){console.error(e);return false;}
+}
+async function fsSaveUser(user){
+  try{
+    await db.collection('users').doc(user.id).set(user);
+    return true;
+  }catch(e){console.error(e);return false;}
+}
+async function fsDeleteUser(id){
+  try{await db.collection('users').doc(id).delete();return true;}
+  catch(e){return false;}
+}
+async function fsAddLog(action,target,details){
+  try{
+    const log = {
+      action, target, details,
+      user: state.currentAdmin?.username || 'system',
+      userName: state.currentAdmin?.name || 'النظام',
+      timestamp: Date.now()
+    };
+    await db.collection('logs').add(log);
+    state.logs.unshift({...log, id: uid('tmp_')});
+  }catch(e){console.warn('log:',e);}
+}
+async function fsGetRefCounter(){
+  try{
+    const doc = await db.collection('config').doc('refCounter').get();
+    let counter = doc.exists ? (doc.data().value || 0) : 0;
+    counter++;
+    await db.collection('config').doc('refCounter').set({ value: counter });
+    state.refCounter = counter;
+    const year = new Date().getFullYear();
+    return `HHM-${year}-${String(counter).padStart(4,'0')}`;
+  }catch(e){
+    console.error('ref counter:', e);
+    // fallback محلي
+    state.refCounter++;
+    const year = new Date().getFullYear();
+    return `HHM-${year}-${String(state.refCounter).padStart(4,'0')}`;
   }
 }
-function addLog(action,target,details){
-  state.logs.unshift({id:uid('log_'),action,target,details,user:state.currentAdmin?.username||'system',userName:state.currentAdmin?.name||'النظام',timestamp:Date.now()});
-  saveLogs();
-}
+
 async function sendNotification(subject,data){
   const fd=new FormData();
   fd.append('_subject',subject);fd.append('_template','table');fd.append('_captcha','false');
@@ -989,6 +1088,7 @@ async function sendNotification(subject,data){
   try{const res=await fetch(FORMSUBMIT_URL,{method:'POST',body:fd,headers:{'Accept':'application/json'}});return{success:res.ok};}
   catch(err){return{success:false};}
 }
+
 function goTo(screenId){
   ['welcomeScreen','typeScreen','basicScreen','formScreen','successScreen','trackScreen'].forEach(id=>{
     const el=$(id);if(el)el.classList.toggle('hidden',id!==screenId);
@@ -996,7 +1096,6 @@ function goTo(screenId){
   window.scrollTo({top:0,behavior:'instant'});
 }
 
-/* ============ Logo & Site Settings ============ */
 function renderLogo(){
   const logoHTML=state.siteSettings.logo?`<img src="${state.siteSettings.logo}" alt="">`:DEFAULT_LOGO_SVG;
   const w=$('welcomeLogoInner');if(w)w.innerHTML=logoHTML;
@@ -1013,22 +1112,16 @@ function applySiteSettings(){
   document.documentElement.style.setProperty('--green',s.secondaryColor);
   document.documentElement.style.setProperty('--red-dark',s.primaryColor);
   document.documentElement.style.setProperty('--hospital-font',`'${s.hospitalNameFont}',serif`);
-
   const t=document.querySelector('.welcome-hospital-name');if(t)t.textContent=s.welcomeTitle;
   const sb=document.querySelector('.welcome-subtitle');if(sb)sb.textContent=s.welcomeSubtitle;
   const tg=document.querySelector('.welcome-tagline');if(tg)tg.textContent=s.welcomeTagline;
-
-  /* ✅ زر الحصول على الباج */
   const b=$('startBtn');
   if(b)b.innerHTML=`<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>${escapeHtml(s.welcomeButton)}</span>`;
-
-  /* ✅ زر متابعة الطلب (إصلاح) */
   const tb=$('trackBtn');
   if(tb){
     tb.style.display=s.welcomeShowTrack?'':'none';
     tb.innerHTML=`<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><span>${escapeHtml(s.trackButton || 'متابعة طلب سابق')}</span>`;
   }
-
   const f=document.querySelector('.welcome-footer');
   if(f)f.innerHTML=`<strong>${escapeHtml(s.footerText)}</strong><br>${escapeHtml(s.footerTextEn)}<br><span class="ver">${escapeHtml(s.versionText)}</span>`;
   renderLogo();
@@ -1051,8 +1144,8 @@ function adminLogin(){
   const user=state.users.find(x=>x.username===u&&x.password===p&&(x.role==='admin'||x.role==='super_admin'));
   if(!user){toast('بيانات غير صحيحة','error');return;}
   state.currentAdmin=user;
-  localStorage.setItem(KEYS.SESSION,user.username);
-  addLog('login',user.username,'دخول الإدارة');
+  sessionStorage.setItem('admin_session', user.username);
+  fsAddLog('login',user.username,'دخول الإدارة');
   closeModal('adminLoginModal');
   openAdminDashboard();
 }
@@ -1060,12 +1153,13 @@ function openAdminDashboard(){
   $('welcomeScreen').classList.add('hidden');
   $('adminDashboard').classList.remove('hidden');
   $('adminRoleLabel').textContent=ROLES[state.currentAdmin.role].label+' · '+state.currentAdmin.name;
+  $('liveIndicator').style.display='inline-flex';
   renderAdminAll();
 }
 $('adminLogoutBtn').addEventListener('click',()=>{
   if(!confirm('تسجيل الخروج؟'))return;
-  addLog('logout',state.currentAdmin.username,'خروج');
-  localStorage.removeItem(KEYS.SESSION);
+  fsAddLog('logout',state.currentAdmin.username,'خروج');
+  sessionStorage.removeItem('admin_session');
   state.currentAdmin=null;
   $('adminDashboard').classList.add('hidden');
   goTo('welcomeScreen');
@@ -1086,7 +1180,6 @@ document.querySelectorAll('.admin-nav-btn').forEach(btn=>{
   });
 });
 
-/* ============ Welcome Buttons ============ */
 $('startBtn').addEventListener('click',()=>{
   state.requestType=null;state.basicName='';state.basicJob='';state.basicWorkplace='';
   state.personalPhoto=null;state.formPhoto=null;state.currentReference=null;
@@ -1094,13 +1187,8 @@ $('startBtn').addEventListener('click',()=>{
   $('typeContinueBtn').disabled=true;
   goTo('typeScreen');
 });
-$('trackBtn').addEventListener('click',()=>{
-  state.currentReference=null;
-  renderTrackScreen();
-  goTo('trackScreen');
-});
+$('trackBtn').addEventListener('click',()=>{state.currentReference=null;renderTrackScreen();goTo('trackScreen');});
 
-/* ============ Type Selection ============ */
 document.querySelectorAll('.select-card').forEach(card=>{
   card.addEventListener('click',()=>{
     document.querySelectorAll('.select-card').forEach(c=>c.classList.remove('selected'));
@@ -1111,7 +1199,6 @@ document.querySelectorAll('.select-card').forEach(card=>{
 });
 $('typeContinueBtn').addEventListener('click',()=>{if(!state.requestType)return;goTo('basicScreen');setTimeout(()=>$('basicName').focus(),300);});
 
-/* ============ Basic ============ */
 $('basicContinueBtn').addEventListener('click',()=>{
   const name=$('basicName').value.trim();
   const job=$('basicJob').value;
@@ -1126,7 +1213,6 @@ $('basicContinueBtn').addEventListener('click',()=>{
   goTo('formScreen');
 });
 
-/* ============ Dropdowns ============ */
 function populateDropdowns(){
   const fill=(id,items)=>{
     const sel=$(id);if(!sel)return;
@@ -1156,7 +1242,6 @@ function populateDropdowns(){
   });
 });
 
-/* ============ Uploads ============ */
 function setupUpload(boxId,inputId,previewId,removeId,onSet){
   const box=$(boxId),input=$(inputId),preview=$(previewId),remove=$(removeId);
   if(!box)return;
@@ -1164,7 +1249,8 @@ function setupUpload(boxId,inputId,previewId,removeId,onSet){
   input.addEventListener('change',async e=>{
     const f=e.target.files[0];if(!f)return;
     try{
-      const data=await compressImage(f,600,800,0.82);
+      const isForm = inputId === 'formPhotoInput';
+      const data=await compressImage(f, isForm?700:400, isForm?900:500, 0.7);
       onSet(data);
       preview.src=data;preview.classList.remove('hidden');
       box.querySelector('.up-icon').classList.add('hidden');
@@ -1187,7 +1273,6 @@ function setupUpload(boxId,inputId,previewId,removeId,onSet){
 setupUpload('personalPhotoBox','personalPhotoInput','personalPhotoPreview','personalPhotoRemove',v=>state.personalPhoto=v);
 setupUpload('formPhotoBox','formPhotoInput','formPhotoPreview','formPhotoRemove',v=>state.formPhoto=v);
 
-/* ============ Submit Request ============ */
 $('submitRequestBtn').addEventListener('click',async()=>{
   const specialty=$('fSpecialty').value.trim();
   const department=$('fDepartment').value.trim();
@@ -1198,14 +1283,19 @@ $('submitRequestBtn').addEventListener('click',async()=>{
   if(!department){toast('اختر القسم','error');return;}
   if(!state.personalPhoto){toast('ارفع الصورة الشخصية','error');return;}
   if(!state.formPhoto){toast('ارفع صورة الاستمارة','error');return;}
+  if(!state.firebaseReady){toast('النظام لم يتصل بالسيرفر بعد، انتظر...','warn');return;}
 
-  /* ✅ توليد الرقم المرجعي */
-  const referenceNumber = generateReferenceNumber();
+  const btn = $('submitRequestBtn');
+  btn.disabled = true;
+  btn.innerHTML = '⏳ جاري الإرسال...';
+
+  // توليد الرقم المرجعي
+  const referenceNumber = await fsGetRefCounter();
 
   const now=Date.now();
   const request={
     id:uid('req_'),
-    referenceNumber: referenceNumber,  /* ✅ جديد */
+    referenceNumber: referenceNumber,
     type:state.requestType,
     nameAr:state.basicName,nameEn,jobTitle:state.basicJob,specialty,
     department,workplace:state.basicWorkplace,unit,employeeNumber:empNum,notes,
@@ -1213,14 +1303,17 @@ $('submitRequestBtn').addEventListener('click',async()=>{
     status:'pending',effective:todayISO(),expiry:addOneYear(todayISO()),
     submittedAt:now,history:[{status:'pending',at:now,by:'الموظف',note:'تقديم'}]
   };
-  const prev=JSON.parse(JSON.stringify(state.requests));
-  state.requests.push(request);
-  if(!saveRequests()){state.requests=prev;return;}
+
+  const ok = await fsSaveRequest(request);
+  btn.disabled = false;
+  btn.innerHTML = '📤 إرسال الطلب للإدارة';
+
+  if(!ok){toast('فشل الإرسال — حاول مرة أخرى','error');return;}
 
   state.currentRequestId=request.id;
   state.currentReference=referenceNumber;
 
-  addLog('request',request.id,`طلب باج (${state.requestType==='first'?'أول مرة':'تجديد'}) — ${referenceNumber} — ${state.basicName}`);
+  fsAddLog('request',request.id,`طلب باج (${state.requestType==='first'?'أول مرة':'تجديد'}) — ${referenceNumber} — ${state.basicName}`);
 
   sendNotification(`📝 طلب باج ${state.requestType==='first'?'جديد':'تجديد'}`,{
     'الرقم المرجعي': referenceNumber,
@@ -1231,22 +1324,16 @@ $('submitRequestBtn').addEventListener('click',async()=>{
     'رقم الطلب':request.id,'التاريخ':new Date().toLocaleString('ar-IQ')
   });
 
-  // عرض الرقم المرجعي في شاشة النجاح
   $('refNumberDisplay').textContent = referenceNumber;
   goTo('successScreen');
 });
 
-/* ✅ نسخ الرقم المرجعي */
 window.copyReference = function(){
   const ref = state.currentReference || $('refNumberDisplay').textContent;
   if(!ref || ref === '—') return;
   if(navigator.clipboard){
-    navigator.clipboard.writeText(ref).then(()=>{
-      toast('✅ تم نسخ الرقم المرجعي','success');
-    }).catch(()=>fallbackCopy(ref));
-  } else {
-    fallbackCopy(ref);
-  }
+    navigator.clipboard.writeText(ref).then(()=>toast('✅ تم نسخ الرقم المرجعي','success')).catch(()=>fallbackCopy(ref));
+  } else fallbackCopy(ref);
 };
 function fallbackCopy(text){
   const ta = document.createElement('textarea');
@@ -1254,41 +1341,26 @@ function fallbackCopy(text){
   document.body.appendChild(ta);
   ta.select();
   try{ document.execCommand('copy'); toast('✅ تم النسخ','success'); }
-  catch(e){ toast('فشل النسخ، انسخه يدوياً','warn'); }
+  catch(e){ toast('فشل النسخ','warn'); }
   document.body.removeChild(ta);
 }
-// النقر على الرقم ينسخه
 document.addEventListener('click', e => {
-  if(e.target && e.target.id === 'refNumberDisplay'){
-    copyReference();
-  }
+  if(e.target && e.target.id === 'refNumberDisplay') copyReference();
 });
 
-$('goToTrackBtn').addEventListener('click',()=>{
-  renderTrackScreen();
-  goTo('trackScreen');
-});
+$('goToTrackBtn').addEventListener('click',()=>{renderTrackScreen();goTo('trackScreen');});
 $('backHomeBtn').addEventListener('click',()=>goTo('welcomeScreen'));
 
-/* ============ Track Screen (بالرقم المرجعي) ============ */
 function renderTrackScreen(){
   const host=$('trackContent');
   if(!host)return;
-
-  // إذا كان لدينا رقم مرجعي محفوظ - عرض حالة الطلب مباشرة
   if(state.currentReference){
     const myReq = state.requests.find(r => r.referenceNumber === state.currentReference);
-    if(myReq){
-      host.innerHTML = buildRequestStatusHTML(myReq);
-      return;
-    }
+    if(myReq){ host.innerHTML = buildRequestStatusHTML(myReq); return; }
   }
-
-  // وإلا عرض نموذج البحث
   host.innerHTML = `
     <h2 class="page-title">متابعة طلبك</h2>
     <p class="page-subtitle">أدخل الرقم المرجعي الذي حصلت عليه عند تقديم الطلب</p>
-
     <div class="form-card">
       <div class="field" style="margin-bottom:14px">
         <label>الرقم المرجعي <span class="req">*</span></label>
@@ -1300,55 +1372,41 @@ function renderTrackScreen(){
         عرض حالة الطلب
       </button>
     </div>
-
     <div class="info-box">
       <strong>💡 أين أجد الرقم المرجعي؟</strong><br>
-      ظهر لك على شاشة النجاح بعد إرسال الطلب. ابحث عنه في لقطة الشاشة التي أخذتها أو في نص الرسالة التي أرسلتها لنفسك.
+      ظهر لك على شاشة النجاح بعد إرسال الطلب.
     </div>
   `;
-
   $('doTrackBtn').addEventListener('click', doTrack);
-  $('refInput').addEventListener('keydown', e => {
-    if(e.key === 'Enter') doTrack();
-  });
+  $('refInput').addEventListener('keydown', e => { if(e.key === 'Enter') doTrack(); });
   setTimeout(()=>$('refInput').focus(), 300);
 }
-
 function doTrack(){
   const ref = ($('refInput').value || '').trim().toUpperCase();
-  if(!ref){
-    toast('أدخل الرقم المرجعي','warn');
-    return;
-  }
-  const myReq = state.requests.find(r =>
-    (r.referenceNumber || '').toUpperCase() === ref
-  );
-
+  if(!ref){ toast('أدخل الرقم المرجعي','warn'); return; }
+  const myReq = state.requests.find(r => (r.referenceNumber || '').toUpperCase() === ref);
   if(!myReq){
-    toast('❌ لم يتم العثور على طلب بهذا الرقم','error');
+    toast('❌ لم يتم العثور على طلب','error');
     const host = $('trackContent');
     host.innerHTML = `
       <div class="status-card">
         <div class="status-icon-wrap rejected" style="background:var(--red-light);color:var(--red-dark)">❌</div>
         <h3 class="status-title">لم يتم العثور على الطلب</h3>
-        <p class="status-desc">تأكد من الرقم المرجعي المدخل وحاول مرة أخرى.</p>
+        <p class="status-desc">تأكد من الرقم المرجعي وحاول مرة أخرى.</p>
         <button class="btn btn-primary btn-block" onclick="renderTrackScreen()">↺ المحاولة مرة أخرى</button>
       </div>`;
     return;
   }
-
   state.currentReference = ref;
   state.currentRequestId = myReq.id;
   const host = $('trackContent');
   host.innerHTML = buildRequestStatusHTML(myReq);
 }
-
 window.renderTrackScreen = renderTrackScreen;
 
 function buildRequestStatusHTML(myReq){
   const st=STATUS[myReq.status];
   const stIcon={pending:'⏳',under_review:'🔍',approved:'✅',rejected:'❌',needs_modification:'⚠️',badge_generated:'🎫',printed:'🖨️'};
-
   return `
     <div class="status-card">
       <div class="status-icon-wrap ${st.cls}">${stIcon[myReq.status]||'📋'}</div>
@@ -1362,13 +1420,11 @@ function buildRequestStatusHTML(myReq){
         ${myReq.status==='rejected'?'تم رفض الطلب. راجع السبب أدناه.':''}
         ${myReq.status==='needs_modification'?'يحتاج الطلب إلى تعديل. راجع التفاصيل أدناه.':''}
       </p>
-
       <div class="reference-box" style="margin:16px 0">
         <div class="ref-label">الرقم المرجعي</div>
         <div class="ref-number" style="font-size:22px" onclick="copyRefFromTrack('${myReq.referenceNumber}')">${escapeHtml(myReq.referenceNumber || '—')}</div>
         <div class="ref-hint">📋 اضغط على الرقم لنسخه</div>
       </div>
-
       <div class="status-info">
         <div class="status-info-row"><span class="si-label">نوع الطلب</span><span class="si-value">${myReq.type==='first'?'أول مرة':'تجديد'}</span></div>
         <div class="status-info-row"><span class="si-label">الاسم</span><span class="si-value">${escapeHtml(myReq.nameAr)}</span></div>
@@ -1378,18 +1434,14 @@ function buildRequestStatusHTML(myReq){
         ${myReq.badgeNumber?`<div class="status-info-row"><span class="si-label">رقم الباج</span><span class="si-value">${escapeHtml(myReq.badgeNumber)}</span></div>`:''}
         <div class="status-info-row"><span class="si-label">تاريخ التقديم</span><span class="si-value">${fmtDT(myReq.submittedAt)}</span></div>
       </div>
-
       ${myReq.rejectionReason?`<div class="warn-box" style="margin-top:16px;text-align:right"><strong>❌ سبب الرفض:</strong><br>${escapeHtml(myReq.rejectionReason)}</div>`:''}
       ${myReq.modificationReason?`<div class="info-box" style="margin-top:16px;text-align:right"><strong>⚠️ التعديل المطلوب:</strong><br>${escapeHtml(myReq.modificationReason)}</div>`:''}
-
       ${(myReq.status==='badge_generated'||myReq.status==='printed')?`<button class="btn btn-success btn-block" style="margin-top:20px" onclick="previewBadge('${myReq.id}')">🎫 عرض الباج</button>`:''}
-
       <div style="margin-top:14px">
         <button class="btn btn-ghost btn-block" onclick="state.currentReference=null;renderTrackScreen()">🔍 متابعة طلب آخر</button>
       </div>
     </div>`;
 }
-
 window.copyRefFromTrack = function(ref){
   if(!ref) return;
   if(navigator.clipboard){
@@ -1397,7 +1449,7 @@ window.copyRefFromTrack = function(ref){
   } else fallbackCopy(ref);
 };
 
-/* ============ Badge Rendering ============ */
+/* Badge rendering */
 function buildBadgeHTML(data,opts={}){
   const t=state.template;
   const editorMode=opts.editor===true;
@@ -1456,7 +1508,6 @@ function buildBadgeHTML(data,opts={}){
   html+=`</div>`;
   return html;
 }
-
 window.previewBadge=function(reqId){
   const r=state.requests.find(x=>x.id===reqId);if(!r)return;
   openModal('badgeModal');
@@ -1527,7 +1578,7 @@ window.downloadBadgePDF=async function(reqId){
   }catch(e){console.error(e);toast('فشل','error');}
 };
 
-/* ============ Admin Renderers ============ */
+/* Admin renderers */
 function renderAdminAll(){
   renderAdminDashboard();renderReviewList();renderBadgesList();
   renderPrintList();renderTemplateEditor();renderLists();
@@ -1546,7 +1597,7 @@ function renderAdminDashboard(){
   $('adminRecent').innerHTML=recent.length?recent.map(l=>`
     <div style="display:flex;gap:12px;padding:12px;border-bottom:1px solid var(--gray-100);font-size:13px">
       <div style="width:36px;height:36px;border-radius:10px;background:var(--gray-100);display:flex;align-items:center;justify-content:center;flex-shrink:0">📋</div>
-      <div style="flex:1"><div style="font-weight:700">${escapeHtml(l.details)}</div><div style="font-size:11.5px;color:var(--gray-500);margin-top:2px">${escapeHtml(l.userName)} · ${fmtDT(l.timestamp)}</div></div>
+      <div style="flex:1"><div style="font-weight:700">${escapeHtml(l.details)}</div><div style="font-size:11.5px;color:var(--gray-500);margin-top:2px">${escapeHtml(l.userName||'')} · ${fmtDT(l.timestamp)}</div></div>
     </div>`).join(''):'<div class="empty-state"><div class="es-icon">📋</div><p>لا توجد نشاطات</p></div>';
   const pending=state.requests.filter(r=>r.status==='pending'||r.status==='under_review').length;
   const badge=$('reviewBadge');
@@ -1614,38 +1665,40 @@ window.zoomImg=function(src){
   openModal('zoomModal');
   $('zoomModalBody').innerHTML=`<div style="text-align:center"><img src="${src}" style="max-width:100%;max-height:80vh;border-radius:10px"></div>`;
 };
-window.approveReq=function(reqId){
+window.approveReq=async function(reqId){
   const r=state.requests.find(x=>x.id===reqId);if(!r)return;
   if(!confirm(`قبول طلب ${r.nameAr}؟`))return;
   const badgeNumber=generateNextBadgeNumber();
   r.status='badge_generated';r.badgeNumber=badgeNumber;
   r.reviewedAt=Date.now();r.reviewedBy=state.currentAdmin.name;
-  state.badges.push({id:uid('badge_'),requestId:r.id,referenceNumber:r.referenceNumber,nameAr:r.nameAr,nameEn:r.nameEn,jobTitle:r.jobTitle,department:r.department,badgeNumber,effective:r.effective,expiry:r.expiry,personalPhoto:r.personalPhoto,generatedAt:Date.now(),generatedBy:state.currentAdmin.name});
-  const prevR=JSON.parse(JSON.stringify(state.requests));
-  const prevB=JSON.parse(JSON.stringify(state.badges));
-  if(!saveRequests()||!saveBadges()){state.requests=prevR;state.badges=prevB;return;}
-  addLog('approve',r.id,`قبول ${r.referenceNumber} → باج ${badgeNumber}`);
+  const ok = await fsSaveRequest(r);
+  if(!ok)return;
+  fsAddLog('approve',r.id,`قبول ${r.referenceNumber} → باج ${badgeNumber}`);
   sendNotification('✅ قبول طلب باج',{'الرقم المرجعي':r.referenceNumber,'الاسم':r.nameAr,'رقم الباج':badgeNumber,'القسم':r.department,'الموافق':state.currentAdmin.name});
   toast(`✅ تم القبول — باج ${badgeNumber}`,'success');
-  closeModal('reviewModal');renderAdminAll();
+  closeModal('reviewModal');
 };
-window.requestMod=function(reqId){
+window.requestMod=async function(reqId){
   const r=state.requests.find(x=>x.id===reqId);if(!r)return;
   const reason=prompt('سبب التعديل:');if(!reason||!reason.trim())return;
   r.status='needs_modification';r.modificationReason=reason.trim();
   r.reviewedAt=Date.now();r.reviewedBy=state.currentAdmin.name;
-  saveRequests();addLog('request-mod',r.id,reason);
+  const ok = await fsSaveRequest(r);
+  if(!ok)return;
+  fsAddLog('request-mod',r.id,reason);
   toast('تم إرسال طلب التعديل','warn');
-  closeModal('reviewModal');renderAdminAll();
+  closeModal('reviewModal');
 };
-window.rejectReq=function(reqId){
+window.rejectReq=async function(reqId){
   const r=state.requests.find(x=>x.id===reqId);if(!r)return;
   const reason=prompt('سبب الرفض:');if(!reason||!reason.trim())return;
   r.status='rejected';r.rejectionReason=reason.trim();
   r.reviewedAt=Date.now();r.reviewedBy=state.currentAdmin.name;
-  saveRequests();addLog('reject',r.id,reason);
+  const ok = await fsSaveRequest(r);
+  if(!ok)return;
+  fsAddLog('reject',r.id,reason);
   toast('تم الرفض','warn');
-  closeModal('reviewModal');renderAdminAll();
+  closeModal('reviewModal');
 };
 
 function renderBadgesList(){
@@ -1698,7 +1751,6 @@ $('printBatchBtn').addEventListener('click',()=>{
   setTimeout(()=>{window.print();setTimeout(()=>{pa.classList.remove('active','bulk-mode');pa.innerHTML='';},500);},400);
 });
 
-/* ============ Template Editor ============ */
 const FIELD_LABELS = {
   photo:{icon:'📷',name:'الصورة'},
   id:{icon:'#',name:'رقم الباج'},
@@ -1807,13 +1859,13 @@ function renderFieldControls(){
       state.template.fields[key][prop]=v;
       updateFieldVisual(key);
     });
-    inp.addEventListener('change',saveTemplate);
+    inp.addEventListener('change',()=>fsSaveTemplate());
   });
 }
 window.setAlign=function(align){
   const key=state.selectedField;
   state.template.fields[key].align=align;
-  updateFieldVisual(key);renderFieldControls();saveTemplate();
+  updateFieldVisual(key);renderFieldControls();fsSaveTemplate();
 };
 function updateFieldVisual(key){
   const el=document.querySelector(`#templatePreviewInner .badge-field[data-field="${key}"]`);
@@ -1838,7 +1890,7 @@ window.nudgeField=function(dir){
   const key=state.selectedField;const f=state.template.fields[key];
   if(dir==='left')f.x-=2;else if(dir==='right')f.x+=2;
   else if(dir==='up')f.y-=2;else if(dir==='down')f.y+=2;
-  updateFieldVisual(key);renderFieldControls();saveTemplate();
+  updateFieldVisual(key);renderFieldControls();fsSaveTemplate();
 };
 window.resetFieldPosition=function(){
   if(state.template.locked)return;
@@ -1846,7 +1898,7 @@ window.resetFieldPosition=function(){
   const key=state.selectedField;
   const def=BADGE_FIELDS[key]?BADGE_FIELDS[key].defaults:BADGE_BOX[key];
   Object.assign(state.template.fields[key],JSON.parse(JSON.stringify(def)));
-  updateFieldVisual(key);renderFieldControls();saveTemplate();
+  updateFieldVisual(key);renderFieldControls();fsSaveTemplate();
   toast('تم الاستعادة','success');
 };
 window.zoomTemplate=function(delta){
@@ -1899,38 +1951,42 @@ function onEditorMove(e){
 function onEditorUp(){
   if(state.dragEl)state.dragEl.style.cursor='';
   state.dragging=null;state.dragEl=null;
-  saveTemplate();document.removeEventListener('pointermove',onEditorMove);
+  fsSaveTemplate();document.removeEventListener('pointermove',onEditorMove);
 }
 $('templateUpload').addEventListener('change',async e=>{
   const f=e.target.files[0];if(!f)return;
   if(f.size>8*1024*1024){toast('الصورة كبيرة جداً','error');e.target.value='';return;}
   try{
-    const data=await compressImage(f,680,1080,0.78);
+    const data=await compressImage(f,680,1080,0.72);
     state.template.bg=data;
-    if(!saveTemplate()){state.template.bg=null;e.target.value='';return;}
+    const ok = await fsSaveTemplate();
+    if(!ok){state.template.bg=null;e.target.value='';return;}
     renderTemplateEditor();
-    toast('✅ تم رفع القالب','success');
+    toast('✅ تم رفع القالب ونشره للجميع','success');
   }catch(err){toast(err.message,'error');}
   e.target.value='';
 });
-$('clearTemplateBtn').addEventListener('click',()=>{
+$('clearTemplateBtn').addEventListener('click',async()=>{
   if(!confirm('إزالة القالب؟'))return;
-  state.template.bg=null;saveTemplate();renderTemplateEditor();
+  state.template.bg=null;
+  await fsSaveTemplate();
+  renderTemplateEditor();
   toast('تمت الإزالة','success');
 });
-$('lockTemplateBtn').addEventListener('click',()=>{
+$('lockTemplateBtn').addEventListener('click',async()=>{
   if(!confirm('تثبيت القالب؟'))return;
   state.template.locked=true;state.template.lockedAt=Date.now();
-  saveTemplate();addLog('template-lock','','تثبيت');
+  await fsSaveTemplate();
+  fsAddLog('template-lock','','تثبيت');
   toast('🔒 تم التثبيت','success');renderTemplateEditor();
 });
-$('unlockTemplateBtn').addEventListener('click',()=>{
+$('unlockTemplateBtn').addEventListener('click',async()=>{
   if(!confirm('فتح القفل؟'))return;
-  state.template.locked=false;saveTemplate();
+  state.template.locked=false;
+  await fsSaveTemplate();
   toast('🔓 مفتوح','warn');renderTemplateEditor();
 });
 
-/* ============ Lists ============ */
 function renderLists(){
   const render=(k,hostId)=>{
     const host=$(hostId);if(!host)return;
@@ -1940,20 +1996,21 @@ function renderLists(){
   render('jobTitles','listJobTitles');render('specialties','listSpecialties');
   render('departments','listDepartments');render('workplaces','listWorkplaces');
 }
-window.addListItem=function(k){
+window.addListItem=async function(k){
   const val=prompt('القيمة:');if(!val||!val.trim())return;
   if(!state.lists[k])state.lists[k]=[];
   if(state.lists[k].includes(val.trim())){toast('موجود','warn');return;}
-  state.lists[k].push(val.trim());saveLists();renderLists();populateDropdowns();
+  state.lists[k].push(val.trim());
+  await fsSaveLists();renderLists();populateDropdowns();
   toast('تمت الإضافة','success');
 };
-window.removeListItem=function(k,idx){
+window.removeListItem=async function(k,idx){
   if(!confirm('حذف؟'))return;
-  state.lists[k].splice(idx,1);saveLists();renderLists();populateDropdowns();
+  state.lists[k].splice(idx,1);
+  await fsSaveLists();renderLists();populateDropdowns();
   toast('تم الحذف','success');
 };
 
-/* ============ Users ============ */
 function renderUsers(){
   const tbody=$('usersBody');if(!tbody)return;
   tbody.innerHTML=state.users.map(u=>`
@@ -1962,28 +2019,32 @@ function renderUsers(){
       <td class="td-muted ltr">${escapeHtml(u.username)}</td>
       <td><span class="pill pill-${u.role==='super_admin'?'approved':'review'}">${ROLES[u.role]?.icon||'👤'} ${ROLES[u.role]?.label||u.role}</span></td>
       <td class="td-date">${fmtDT(u.createdAt)}</td>
-      <td>${u.username!=='admin'?`<button class="action-btn del" onclick="deleteUser('${u.username}')">🗑</button>`:'<span style="font-size:11px;color:var(--gray-400)">أساسي</span>'}</td>
+      <td>${u.username!=='admin'?`<button class="action-btn del" onclick="deleteUser('${u.id}','${u.username}')">🗑</button>`:'<span style="font-size:11px;color:var(--gray-400)">أساسي</span>'}</td>
     </tr>`).join('');
 }
-window.deleteUser=function(u){
-  if(!confirm(`حذف ${u}؟`))return;
-  state.users=state.users.filter(x=>x.username!==u);
-  saveUsers();renderUsers();toast('تم الحذف','success');
+window.deleteUser=async function(id, username){
+  if(!confirm(`حذف ${username}؟`))return;
+  await fsDeleteUser(id);
+  state.users = state.users.filter(x=>x.id !== id);
+  renderUsers();
+  toast('تم الحذف','success');
 };
 $('addUserBtn').addEventListener('click',()=>openModal('addUserModal'));
-$('addUserSaveBtn').addEventListener('click',()=>{
+$('addUserSaveBtn').addEventListener('click',async()=>{
   const name=$('nu_name').value.trim();
   const username=$('nu_username').value.trim();
   const password=$('nu_pass').value;
   const role=$('nu_role').value;
   if(!name||!username||!password){toast('املأ الحقول','error');return;}
   if(state.users.some(u=>u.username===username)){toast('موجود','error');return;}
-  state.users.push({id:uid('u_'),username,password,name,role,createdAt:Date.now()});
-  saveUsers();addLog('user-add',username,name);
-  closeModal('addUserModal');renderUsers();toast('تمت الإضافة','success');
+  const user = {id:uid('u_'),username,password,name,role,createdAt:Date.now()};
+  await fsSaveUser(user);
+  state.users.push(user);
+  fsAddLog('user-add',username,name);
+  closeModal('addUserModal');renderUsers();
+  toast('تمت الإضافة','success');
 });
 
-/* ============ Site Settings ============ */
 function renderSiteSettings(){
   const s=state.siteSettings;
   const lp=$('logoPreview');
@@ -1996,6 +2057,7 @@ function renderSiteSettings(){
   setVal('setWelcomeSubtitle',s.welcomeSubtitle);
   setVal('setWelcomeTagline',s.welcomeTagline);
   setVal('setWelcomeButton',s.welcomeButton);
+  setVal('setTrackButton',s.trackButton||'متابعة طلب سابق');
   setVal('setPrimaryColor',s.primaryColor);
   setVal('setSecondaryColor',s.secondaryColor);
   setVal('setFooterText',s.footerText);
@@ -2004,21 +2066,19 @@ function renderSiteSettings(){
   const chk=$('setShowTrack');if(chk)chk.checked=s.welcomeShowTrack;
   const pv=$('setPrimaryValue');if(pv)pv.textContent=s.primaryColor;
   const sv=$('setSecondaryValue');if(sv)sv.textContent=s.secondaryColor;
-  // Font options
   document.querySelectorAll('.font-option').forEach(el=>{
     el.classList.toggle('active', el.dataset.font === s.hospitalNameFont);
   });
 }
 document.querySelectorAll('.font-option').forEach(el=>{
-  el.addEventListener('click',()=>{
+  el.addEventListener('click',async()=>{
     state.siteSettings.hospitalNameFont = el.dataset.font;
     document.documentElement.style.setProperty('--hospital-font',`'${el.dataset.font}',serif`);
     document.querySelectorAll('.font-option').forEach(x=>x.classList.toggle('active',x===el));
-    saveSiteSettings();
+    await fsSaveSettings();
     toast('تم تغيير الخط','success');
   });
 });
-
 function bindSiteSettingsEvents(){
   const upload=$('settingsLogoUpload');
   if(upload&&!upload.dataset.bound){
@@ -2026,11 +2086,12 @@ function bindSiteSettingsEvents(){
     upload.addEventListener('change',async e=>{
       const f=e.target.files[0];if(!f)return;
       try{
-        const data=await compressImage(f,400,400,0.9);
+        const data=await compressImage(f,400,400,0.88);
         state.siteSettings.logo=data;
-        saveSiteSettings();renderSiteSettings();applySiteSettings();
-        addLog('settings','logo','تحديث الشعار');
-        toast('✅ تم التحديث','success');
+        await fsSaveSettings();
+        renderSiteSettings();applySiteSettings();
+        fsAddLog('settings','logo','تحديث الشعار');
+        toast('✅ تم تحديث الشعار للجميع','success');
       }catch(err){toast(err.message,'error');}
       e.target.value='';
     });
@@ -2038,10 +2099,11 @@ function bindSiteSettingsEvents(){
   const resetLogo=$('settingsLogoRemove');
   if(resetLogo&&!resetLogo.dataset.bound){
     resetLogo.dataset.bound='1';
-    resetLogo.addEventListener('click',()=>{
+    resetLogo.addEventListener('click',async()=>{
       if(!confirm('استعادة الافتراضي؟'))return;
       state.siteSettings.logo=null;
-      saveSiteSettings();renderSiteSettings();applySiteSettings();
+      await fsSaveSettings();
+      renderSiteSettings();applySiteSettings();
       toast('تم','success');
     });
   }
@@ -2067,33 +2129,38 @@ function bindSiteSettingsEvents(){
   const saveBtn=$('saveSiteSettingsBtn');
   if(saveBtn&&!saveBtn.dataset.bound){
     saveBtn.dataset.bound='1';
-    saveBtn.addEventListener('click',()=>{
+    saveBtn.addEventListener('click',async()=>{
       const s=state.siteSettings;
       const getVal=(id,fallback)=>{const el=$(id);return el?(el.value.trim()||fallback||''):fallback;};
       s.welcomeTitle=getVal('setWelcomeTitle',s.welcomeTitle);
       s.welcomeSubtitle=getVal('setWelcomeSubtitle',s.welcomeSubtitle);
       s.welcomeTagline=getVal('setWelcomeTagline',s.welcomeTagline);
       s.welcomeButton=getVal('setWelcomeButton',s.welcomeButton);
+      s.trackButton=getVal('setTrackButton',s.trackButton);
       s.welcomeShowTrack=$('setShowTrack').checked;
       s.primaryColor=$('setPrimaryColor').value;
       s.secondaryColor=$('setSecondaryColor').value;
       s.footerText=getVal('setFooterText',s.footerText);
       s.footerTextEn=getVal('setFooterTextEn',s.footerTextEn);
       s.versionText=getVal('setVersionText',s.versionText);
-      saveSiteSettings();applySiteSettings();
-      addLog('settings','site','حفظ إعدادات الموقع');
-      toast('✅ تم الحفظ','success');
+      const ok = await fsSaveSettings();
+      applySiteSettings();
+      if(ok){
+        fsAddLog('settings','site','حفظ إعدادات الموقع');
+        toast('✅ تم الحفظ والنشر للجميع','success');
+      }
     });
   }
   const resetBtn=$('resetSiteSettingsBtn');
   if(resetBtn&&!resetBtn.dataset.bound){
     resetBtn.dataset.bound='1';
-    resetBtn.addEventListener('click',()=>{
+    resetBtn.addEventListener('click',async()=>{
       if(!confirm('استعادة الافتراضي؟'))return;
       const currentLogo=state.siteSettings.logo;
       state.siteSettings=JSON.parse(JSON.stringify(DEFAULT_SITE_SETTINGS));
       state.siteSettings.logo=currentLogo;
-      saveSiteSettings();renderSiteSettings();applySiteSettings();
+      await fsSaveSettings();
+      renderSiteSettings();applySiteSettings();
       toast('تم','success');
     });
   }
@@ -2112,23 +2179,44 @@ document.addEventListener('click',e=>{
   if(e.target.classList&&e.target.classList.contains('modal-backdrop'))e.target.classList.add('hidden');
 });
 
-function init(){
-  console.log('🚀 بدء نظام الباجات v5...');
-  loadStorage();
+async function init(){
+  console.log('🚀 بدء النظام v4 (Firebase)...');
+  $('loadingOverlay').classList.remove('hidden');
+  
+  const ok = await loadFromFirestore();
+  
+  if(!ok){
+    $('loadingOverlay').innerHTML = `
+      <div style="text-align:center;padding:20px">
+        <div style="font-size:48px;margin-bottom:16px">⚠️</div>
+        <h2 style="margin-bottom:12px">فشل الاتصال بالسيرفر</h2>
+        <p style="opacity:.9;margin-bottom:20px">تأكد من اتصالك بالإنترنت</p>
+        <button onclick="location.reload()" style="padding:12px 24px;border-radius:12px;border:none;background:#fff;color:#8E0000;font-weight:800;font-size:15px;cursor:pointer">🔄 إعادة المحاولة</button>
+      </div>`;
+    return;
+  }
+  
+  $('loadingOverlay').classList.add('hidden');
   populateDropdowns();
   renderLogo();
   applySiteSettings();
   bindSiteSettingsEvents();
   setupHiddenAdminAccess();
-  const savedUser=localStorage.getItem(KEYS.SESSION);
-  if(savedUser){
-    const u=state.users.find(x=>x.username===savedUser&&(x.role==='admin'||x.role==='super_admin'));
-    if(u){state.currentAdmin=u;openAdminDashboard();return;}
+  
+  // الاستماع للتغييرات الفورية
+  setupRealtimeListeners();
+  
+  // تحقق من جلسة إدارية
+  const savedAdmin = sessionStorage.getItem('admin_session');
+  if(savedAdmin){
+    const u = state.users.find(x => x.username === savedAdmin && (x.role==='admin'||x.role==='super_admin'));
+    if(u){ state.currentAdmin = u; openAdminDashboard(); return; }
   }
+  
   goTo('welcomeScreen');
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);
 else init();
 </script>
 </body>
-          </html>
+  </html>
